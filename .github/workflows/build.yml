@@ -48,9 +48,9 @@ jobs:
           args: 'zephyr-export'
       - name: West Build (plonck)
         uses: 'docker://zmkfirmware/zephyr-west-action-arm:latest'
-        id: west-build-plonck
+        id: west-build-cyber60_rev_a
         with:
-          args: 'build "-s zmk/app -b cyber60_rev_b -- -DZMK_CONFIG=/github/workspace/config"'
+          args: 'build "-s zmk/app -b plonck -- -DZMK_CONFIG=/github/workspace/config"'
       - name: Archive (plonck)
         uses: actions/upload-artifact@v2
         with:
