@@ -93,23 +93,23 @@
 		// };
 
 
-    // nav_layer {
-    //   bindings = <
-    //         &trans  &kp F1    &kp F2      &kp F3   &kp F4   &kp F5   &trans    &trans      &trans     &trans        &kp DEL   &trans
-    //         &trans  &kp F5    &kp F6      &kp F7   &kp F8   &kp F9   &td0      &td1        &td2       &td3          &trans    &trans
-    //         &trans  &kp F10   &kp F11     &kp F12  &kp F12  &trans   &kp HOME  &kp PG_DN   &kp PG_UP  &kp END       &trans    &trans
-    //         &trans  &trans    &mo 4  &trans   &trans   &trans   &trans    &kp C_NEXT  &kp C_VOL_DOWN  &kp C_VOL_UP  &kp C_PP  &trans
-    //   >;
-    // };
+    nav_layer {
+      bindings = <
+            &trans  &kp F1    &kp F2      &kp F3   &kp F4   &kp F5   &trans    &trans      &trans     &trans        &kp DEL   &trans
+            &trans  &kp F5    &kp F6      &kp F7   &kp F8   &kp F9   &td0      &td1        &td2       &td3          &trans    &trans
+            &trans  &kp F10   &kp F11     &kp F12  &kp F12  &trans   &kp HOME  &kp PG_DN   &kp PG_UP  &kp END       &trans    &trans
+            &trans  &trans    &mo 4  &trans   &trans   &trans   &trans    &kp C_NEXT  &kp C_VOL_DOWN  &kp C_VOL_UP  &kp C_PP  &trans
+      >;
+    };
 
-    old_nav_layer {
-			bindings = <
-                &bootloader &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans    &trans &kp DEL
-                &trans      &trans &trans &trans &trans &trans &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans &trans
-                &trans      &trans &trans &trans &trans &trans &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans &trans
-                &trans      &trans &trans &trans &trans &trans &mo 4 &trans &trans    &trans    &trans &trans
-			>;
-		};
+    // old_nav_layer {
+		// 	bindings = <
+    //             &bootloader &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans    &trans &kp DEL
+    //             &trans      &trans &trans &trans &trans &trans &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans &trans
+    //             &trans      &trans &trans &trans &trans &trans &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans &trans
+    //             &trans      &trans &trans &trans &trans &trans &mo 4 &trans &trans    &trans    &trans &trans
+		// 	>;
+		// };
 
     // sym_layer {
     //   bindings = <
