@@ -122,23 +122,23 @@
     //             &trans      &trans &trans &trans &trans &trans &mo 4 &trans &trans    &trans    &trans &trans
 		// 	>;
 		// };
-    sym_layer {
-      bindings = <
-            &kp GRAVE  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT  &kp CARET  &kp AMPS        &kp ASTERISK  &trans    &trans  &trans
-            &trans     &kp AMPS  &kp LBKT  &kp LPAR  &kp LBRC  &kp DLLR   &kp MINUS  &kp UNDERSCORE  &kp EQUAL     &kp PLUS  &trans  &trans
-            &trans     &kp AT    &kp RBKT  &kp RPAR  &kp RBRC  &kp PRCNT  &kp PIPE   &kp BLSH        &trans        &trans    &trans  &trans
-            &trans     &trans    &trans    &trans    &trans    &trans     &trans     &trans          &trans        &trans    &trans  &trans
-      >;
-    };
+    // sym_layer {
+    //   bindings = <
+    //         &kp GRAVE  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT  &kp CARET  &kp AMPS        &kp ASTERISK  &trans    &trans  &trans
+    //         &trans     &kp AMPS  &kp LBKT  &kp LPAR  &kp LBRC  &kp DLLR   &kp MINUS  &kp UNDERSCORE  &kp EQUAL     &kp PLUS  &trans  &trans
+    //         &trans     &kp AT    &kp RBKT  &kp RPAR  &kp RBRC  &kp PRCNT  &kp PIPE   &kp BLSH        &trans        &trans    &trans  &trans
+    //         &trans     &trans    &trans    &trans    &trans    &trans     &trans     &trans          &trans        &trans    &trans  &trans
+    //   >;
+    // };
 
-    // old_sym_layer {
-		// 	bindings = <
-    //             &kp GRAVE &kp EXCL  &kp AT    &kp HASH  &kp LPAR &kp RPAR &trans &trans &trans &trans &trans &trans
-    //             &kp BSLH  &kp DLLR  &kp PRCNT &kp ASTRK &kp LBKT &kp RBKT &trans &trans &trans &trans &trans &trans
-    //             &kp PIPE  &kp AMPS  &kp CARET &trans    &kp LBRC &kp RBRC &trans &trans &trans &trans &trans &trans
-    //             &trans    &trans    &trans    &trans    &trans   &mo 4    &trans &trans &trans &trans &trans &trans
-		// 	>;
-		// };
+    old_sym_layer {
+			bindings = <
+                &kp GRAVE &kp EXCL  &kp AT    &kp HASH  &kp LPAR &kp RPAR &trans &trans &trans &trans &trans &trans
+                &kp BSLH  &kp DLLR  &kp PRCNT &kp ASTRK &kp LBKT &kp RBKT &trans &trans &trans &trans &trans &trans
+                &kp PIPE  &kp AMPS  &kp CARET &trans    &kp LBRC &kp RBRC &trans &trans &trans &trans &trans &trans
+                &trans    &trans    &trans    &trans    &trans   &mo 4    &trans &trans &trans &trans &trans &trans
+			>;
+		};
 
 
 
