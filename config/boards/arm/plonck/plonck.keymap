@@ -69,8 +69,8 @@
     num_layer {
       bindings = <
             &kp TILDE  &kp N1  &kp N2   &kp N3   &kp N4   &kp N5     &kp N6     &kp N7  &kp N8     &kp N9   &kp N0     &trans
-            &trans     &trans  &trans   &trans   &kp F5   &kp F2     &kp MINUS  &kp N4  &kp N5     &kp N6   &kp PLUS   &kp ASTRK
-            &trans     &trans  &trans   &trans   &trans   &kp PSCRN  &kp EQUAL  &kp N1  &kp N2     &kp N3   &kp SLASH  &trans
+            &trans     &trans  &trans   &trans   &kp F5   &kp F2     &kp KP_MINUS  &kp N4  &kp N5     &kp N6   &kp KP_PLUS   &kp ASTRK
+            &trans     &trans  &trans   &trans   &trans   &kp PSCRN  &kp KP_EQUAL  &kp N1  &kp N2     &kp N3   &kp KP_SLASH  &trans
             &trans     &trans  &trans   &trans   &trans   &trans     &trans     &kp N0  &kp COMMA  &kp DOT  &trans     &trans
       >;
     };
