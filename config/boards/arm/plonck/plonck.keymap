@@ -66,7 +66,7 @@
     default_layer {
       bindings = <
           //  esc         Q           W           E            R                  T              Y              U                  I            O           P              BKSPC
-              &kp ESCAPE  &kp Q       &kp W       &kp E        &kp R              &kp T          &kp Y          &kp U              &kp I        &kp O       &kp P          &kp BSPC
+              &gresc      &kp Q       &kp W       &kp E        &kp R              &kp T          &kp Y          &kp U              &kp I        &kp O       &kp P          &kp BSPC
               &kp TAB     &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHFT F        &kp G          &kp H          &hm RSHFT J        &hm RCTRL K  &hm RALT L  &hm RGUI SEMI  &kp SQT
               &kp LSHFT   &kp Z       &kp X       &kp C        &kp V              &kp B          &kp N          &kp M              &kp COMMA    &kp DOT     &kp FSLH       &kp RET
               &trans      &kp LGUI    &kp LALT    &kp LCTRL    &lt NUMBERS LPAR   &lt NAV SPACE  &lt NAV SPACE  &lt SYMBOLS LBRC   &kp RALT     &kp RCTRL   &kp RGUI       &trans
@@ -105,11 +105,11 @@
 
     adjustment_layer {
         bindings = <
-        //  esc         Q           W              E             R             T             Y       U       I       O       P       BKSPC
-            bootloader  &bt BT_CLR  &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans  &trans  &trans  &trans  &trans  &trans
-            &bt BT_PRV  &bt BT_NXT  &trans         &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
-            &trans      &trans      &trans         &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
-            &trans      &trans      &trans         &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
+        //  esc          Q           W              E             R             T             Y       U       I       O       P       BKSPC
+            &bootloader  &bt BT_CLR  &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans  &trans  &trans  &trans  &trans  &trans
+            &bt BT_PRV   &bt BT_NXT  &trans         &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
+            &trans       &trans      &trans         &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
+            &trans       &trans      &trans         &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
         >;
     };
   };
