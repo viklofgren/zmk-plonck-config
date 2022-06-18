@@ -9,6 +9,20 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_mins {
+            timeout-ms = <30>;
+            key-positions = <15 16>;
+            bindings = <&kp MINUS>;
+        };
+
+        combo_unds {
+            timeout-ms = <30>;
+            key-positions = <19 20>;
+            bindings = <&kp UNDER>;
+        };
+    };
 
     behaviors {
         hm: homerow_mods {
@@ -20,51 +34,19 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-
-        td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_0";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LEFT>, <&kp LC(LEFT)>;
-        };
-
-        td1: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_1";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp DOWN>, <&kp LC(DOWN)>;
-        };
-
-         td2: tap_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_2";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp UP>, <&kp LC(UP)>;
-        };
-
-        td3: tap_dance_3 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_3";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp RIGHT>, <&kp LC(RIGHT)>;
-        };
     };
 
 	keymap {
 		compatible = "zmk,keymap";
 
-	default_layer {
-      bindings = <
-              &gresc      &kp Q       &kp W       &kp E        &kp R              &kp T          &kp Y          &kp U              &kp I        &kp O       &kp P          &kp BSPC
-              &kp TAB     &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHFT F        &kp G          &kp H          &hm RSHFT J        &hm RCTRL K  &hm RALT L  &hm RGUI SEMI  &kp SQT
-              &kp LSHFT   &kp Z       &kp X       &kp C        &kp V              &kp B          &kp N          &kp M              &kp COMMA    &kp DOT     &kp FSLH       &kp RET
-              &trans      &kp LGUI    &kp LALT    &kp LCTRL    &lt 1 LPAR   &lt 3 SPACE  &lt 3 SPACE  &lt 1 LBRC   &kp RALT     &kp RCTRL   &kp RGUI       &trans
-      >;
-    };
+		default_layer {
+			bindings = <
+                &gresc    &kp Q      &kp W      &kp E       &kp R       &kp T     &kp Y     &kp U       &kp I       &kp O      &kp P         &kp BSPC
+	            &kp TAB   &hm LCMD A &hm LALT S &hm LCTRL D &hm LSHFT F &kp G     &kp H     &hm RSHFT J &hm RCTRL K &hm RALT L &hm RGUI SEMI &kp SQT
+	            &kp LSHFT &kp Z      &kp X      &kp C       &kp V       &kp B     &kp N     &kp M       &kp COMMA   &kp DOT    &kp FSLH      &kp RET
+	            &trans    &kp LCTRL  &kp LALT   &kp LCMD    &mo 2       &lt 1 SPC &lt 3 RET &mo 2       &kp RCMD    &kp RALT   &kp RCTRL     &trans
+			>;
+		};
 
 		nav_layer {
 			bindings = <
