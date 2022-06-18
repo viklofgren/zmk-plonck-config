@@ -112,16 +112,25 @@
     //   >;
     // };
 
-    old_nav_layer {
+    new_nav_layer {
       // &kp C_VOL_DOWN  &kp C_VOL_UP  &tdPlayNext
 			bindings = <
                 &trans &kp F1   &kp F2   &kp F3   &kp F4   &trans &trans   &trans    &trans    &trans    &trans &kp DEL
                 &trans &kp F5   &kp F6   &kp F7   &kp F8   &trans &td0      &td1      &td2     &td3      &trans &trans
-                &trans &kp F9 &kp F10  &kp F11    &kp F12   &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans &trans
-                &trans &trans &mo 4 &trans &trans &trans &trans &trans &trans  &trans  &trans   &trans
+                &trans &kp F9   &kp F10  &kp F11  &kp F12  &trans &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans &trans
+                &trans &trans   &mo 4    &trans   &trans   &trans &trans   &trans    &trans    &trans    &trans &trans
 			>;
 		};
 
+
+    // nav_layer {
+		// 	bindings = <
+    //             &bootloader &trans &trans &trans &trans &trans &trans   &trans    &trans    &trans    &trans &kp DEL
+    //             &trans      &trans &trans &trans &trans &trans &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &trans &trans
+    //             &trans      &trans &trans &trans &trans &trans &kp HOME &kp PG_DN &kp PG_UP &kp END   &trans &trans
+    //             &trans      &trans &trans &trans &trans &trans &mo 4 &trans &trans    &trans    &trans &trans
+		// 	>;
+		// };
     // sym_layer {
     //   bindings = <
     //         &kp GRAVE  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT  &kp CARET  &kp AMPS        &kp ASTERISK  &trans    &trans  &trans
