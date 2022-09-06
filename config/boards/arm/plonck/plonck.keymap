@@ -10,6 +10,10 @@
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
+
+&caps_word {
+  continue-list = <UNDERSCORE MINUS>;
+};
 / {
 
     behaviors {
@@ -90,10 +94,6 @@
             key-positions = <9 10>;
             bindings = <&kp RA(AS(O))>;
         };
-      };
-
-      &caps_word {
-        continue-list = <UNDERSCORE MINUS>;
       };
     };
 
