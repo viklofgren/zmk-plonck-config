@@ -11,9 +11,9 @@
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
 
-&caps_word {
-  continue-list = <UNDERSCORE MINUS>;
-};
+// &caps_word {
+//   continue-list = <UNDERSCORE MINUS>;
+// };
 
 / {
 
@@ -68,6 +68,7 @@
           tapping-term-ms = <200>;
           bindings = <&kp C_PP>, <&kp C_NEXT>;
       };
+
       as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT";
@@ -78,7 +79,6 @@
             bindings = <&kp>, <&kp>;
             retro-tap;
         };
-
     };
 
     // combos {
