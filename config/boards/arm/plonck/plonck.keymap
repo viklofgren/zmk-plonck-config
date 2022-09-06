@@ -84,11 +84,12 @@
 
     combos {
         compatible = "zmk,combos";
-        // combo_qw {
-        //     timeout-ms = <50>;
-        //     key-positions = <1 2>;
-        //     bindings = <&kp RA(AS(W))>;
-        // };
+        combo_qw {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            // bindings = <&kp RA(AS(W))>;
+            bindings = <&kp W>;
+        };
         // combo_as {
         //     timeout-ms = <50>;
         //     key-positions = <13 14>;
