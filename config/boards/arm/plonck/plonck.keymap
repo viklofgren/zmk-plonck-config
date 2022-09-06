@@ -90,11 +90,11 @@
             bindings = <&mt RA(W) LS(RA(W))>;
             // bindings = <&kp RA(W)>;
         };
-        // combo_as {
-        //     timeout-ms = <50>;
-        //     key-positions = <13 14>;
-        //     bindings = <&kp RA(AS(A))>;
-        // };
+        combo_as {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&kp AS(RA(A))>;
+        };
         // combo_op {
         //     timeout-ms = <50>;
         //     key-positions = <9 10>;
