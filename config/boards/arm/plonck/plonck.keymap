@@ -87,7 +87,7 @@
         combo_qw {
             timeout-ms = <50>;
             key-positions = <1 2>;
-            bindings = <&kp RA(AS(W))>;
+            bindings = <&mt RA(W) LS(RA(W))>;
             // bindings = <&kp RA(W)>;
         };
         // combo_as {
