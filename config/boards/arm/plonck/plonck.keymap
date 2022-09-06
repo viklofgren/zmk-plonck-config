@@ -6,79 +6,98 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
+// #include <dt-bindings/zmk/bt.h>
+
+#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
 / {
 
     behaviors {
-        hm: homerow_mods {
+      hm: homerow_mods {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS";
+          #binding-cells = <2>;
+          tapping-term-ms = <200>;
+          quick_tap_ms = <0>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
+          retro-tap;
+      };
+
+      td_LEFT: tap_dance_0 {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_0";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp LEFT>, <&kp LC(LEFT)>;
+      };
+
+      td_DOWN: tap_dance_1 {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_1";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp DOWN>, <&kp LC(DOWN)>;
+      };
+
+      td_UP: tap_dance_2 {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_2";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp UP>, <&kp LC(UP)>;
+      };
+
+      td_RIGHT: tap_dance_3 {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_3";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp RIGHT>, <&kp LC(RIGHT)>;
+      };
+
+      tdPlayPauseNext: tap_dance_play_next {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_PLAYPAUSE_NEXT";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp C_PP>, <&kp C_NEXT>;
+      };
+      as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "AUTO_SHIFT";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping_term_ms = <135>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+            retro-tap;
         };
+      combos {
+        compatible = "zmk,combos";
+        combo_qw {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp RA(AS(W))>;
+        };
+        combo_as {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&kp RA(AS(A))>;
+        };
+        combo_op {
+            timeout-ms = <50>;
+            key-positions = <9 10>;
+            bindings = <&kp RA(AS(O))>;
+        };
+      };
 
-        td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_0";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LEFT>, <&kp LC(LEFT)>;
-        };
-
-        td1: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_1";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp DOWN>, <&kp LC(DOWN)>;
-        };
-
-         td2: tap_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_2";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp UP>, <&kp LC(UP)>;
-        };
-
-        td3: tap_dance_3 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_3";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp RIGHT>, <&kp LC(RIGHT)>;
-        };
-
-        tdPlayPauseNext: tap_dance_play_next {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_PLAYPAUSE_NEXT";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp C_PP>, <&kp C_NEXT>;
-        };
-        combos {
-          compatible = "zmk,combos";
-          combo_qw {
-              timeout-ms = <50>;
-              key-positions = <1 2>;
-              bindings = <&kp RA(w)>;
-          };
-          combo_as {
-              timeout-ms = <50>;
-              key-positions = <13 14>;
-              bindings = <&kp RA(a)>;
-          };
-          combo_op {
-              timeout-ms = <50>;
-              key-positions = <9 10>;
-              bindings = <&kp RA(o)>;
-          };
+      &caps_word {
+        continue-list = <UNDERSCORE MINUS>;
       };
     };
+
+
 
 
 	keymap {
@@ -86,49 +105,41 @@
 
       default_layer {
         bindings = <
-                &gresc                  &kp Q       &kp W         &kp E           &kp R          &kp T          &kp Y          &kp U          &kp I         &kp O         &kp P          &kp BSPC
-                &kp TAB                 &kp A       &hm LALT S    &hm LCTRL D     &hm LSHFT F    &kp G          &kp H          &hm RSHFT J    &hm RCTRL K   &hm RALT L    &kp SEMI       &kp SQT
-                &mt LSHFT &caps_word    &kp Z       &kp X         &kp C           &kp V          &kp B          &kp N          &kp M          &kp COMMA     &kp DOT       &kp FSLH       &kp RET
-                &trans                  &kp LGUI    &kp LALT      &kp LCTRL       &lt 1 LPAR     &lt 2 SPACE    &lt 2 SPACE    &lt 3 LBRC     &kp RALT      &kp RCTRL     &kp RGUI       &trans
+                &gresc                  AS(Q)               AS(W)              AS(E)               AS(R)         AS(T)         AS(Y)          AS(U)             AS(I)              AS(O)               AS(P)                &kp BSPC
+                &kp TAB                 &hm LSHIFT AS(A)    &hm RALT AS(S)     &hm LCTRL AS(D)     AS(F)         AS(G)         AS(H)          &hm RALT AS(J)    &hm RCTRL AS(K)    &hm RSHIFT AS(L)    AS(SEMI)             AS(SQT)
+                &mt LSHFT &caps_word    AS(Z)               AS(X)              AS(C)               AS(V)         AS(B)         AS(N)          AS(M)             AS(COMMA)          AS(DOT)             AS(FSLH)             &kp RET
+                &trans                  &kp LGUI            &kp LALT           &kp LCTRL           &lt 1 LPAR    &lt 2 SPACE   &lt 2 SPACE    &lt 3 LBRC        &kp RALT           &kp RCTRL           &tdPlayPauseNext     &trans
         >;
       };
-      // old_default_layer {
-      //     bindings = <
-      //               &gresc    &kp Q      &kp W      &kp E       &kp R       &kp T     &kp Y     &kp U       &kp I       &kp O      &kp P         &kp BSPC
-      //             &kp TAB   &hm LCMD A &hm LALT S &hm LCTRL D &hm LSHFT F &kp G     &kp H     &hm RSHFT J &hm RCTRL K &hm RALT L &hm RGUI SEMI &kp SQT
-      //             &kp LSHFT &kp Z      &kp X      &kp C       &kp V       &kp B     &kp N     &kp M       &kp COMMA   &kp DOT    &kp FSLH      &kp RET
-      //             &trans    &kp LCTRL  &kp LALT   &kp LCMD    &mo 1       &lt 2 SPC &lt 2 RET &mo 3       &kp RCMD    &kp RALT   &kp RCTRL     &trans
-      //     >;
-		  // };
+
+      // default_layer {
+      //   bindings = <
+      //           &gresc                  &kp Q       &kp W         &kp E           &kp R          &kp T          &kp Y          &kp U          &kp I         &kp O         &kp P                &kp BSPC
+      //           &kp TAB                 &kp A       &hm LALT S    &hm LCTRL D     &hm LSHFT F    &kp G          &kp H          &hm RSHFT J    &hm RCTRL K   &hm RALT L    &kp SEMI             &kp SQT
+      //           &mt LSHFT &caps_word    &kp Z       &kp X         &kp C           &kp V          &kp B          &kp N          &kp M          &kp COMMA     &kp DOT       &kp FSLH             &kp RET
+      //           &trans                  &kp LGUI    &kp LALT      &kp LCTRL       &lt 1 LPAR     &lt 2 SPACE    &lt 2 SPACE    &lt 3 LBRC     &kp RALT      &kp RCTRL     &tdPlayPauseNext     &trans
+      //   >;
+      // };
+
 
     num_layer {
       bindings = <
-            &kp TILDE  &kp N1  &kp N2   &kp N3   &kp N4   &kp N5     &kp N6        &kp N7  &kp N8     &kp N9   &kp N0     &trans
-            &trans     &trans  &trans   &trans   &kp F5   &kp F2     &kp KP_MINUS  &kp N4  &kp N5     &kp N6   &kp KP_PLUS   &kp ASTRK
-            &trans     &trans  &trans   &trans   &trans   &kp PSCRN  &kp KP_EQUAL  &kp N1  &kp N2     &kp N3   &kp KP_SLASH  &trans
-            &trans     &trans  &trans   &trans   &trans   &trans     &trans        &kp N0  &kp COMMA  &kp DOT  &trans     &trans
+            &kp TILDE  &kp N1  &kp N2   &kp N3   &kp N4   &kp N5     &kp N6        &kp N7  &kp N8     &kp N9   &kp N0         &trans
+            &trans     &trans  &trans   &trans   &kp F5   &kp F2     &kp KP_MINUS  &kp N4  &kp N5     &kp N6   &kp KP_PLUS    &kp ASTRK
+            &trans     &trans  &trans   &trans   &trans   &kp PSCRN  &kp KP_EQUAL  &kp N1  &kp N2     &kp N3   &kp KP_SLASH   &trans
+            &trans     &trans  &trans   &trans   &trans   &trans     &trans        &kp N0  &kp COMMA  &kp DOT  &trans         &trans
       >;
     };
 
-    // old_num_layer {
-		// 	bindings = <
-    //             &trans &trans &trans &trans &trans &trans &kp KP_SLASH    &kp N7 &kp N8    &kp N9  &kp KP_MINUS &trans
-    //             &trans &trans &trans &trans &trans &trans &kp KP_MULTIPLY &kp N4 &kp N5    &kp N6  &kp KP_PLUS  &trans
-    //             &trans &trans &trans &trans &trans &trans &trans          &kp N1 &kp N2    &kp N3  &kp KP_EQUAL &trans
-    //             &trans &trans &trans &trans &trans &trans &trans          &kp N0 &kp COMMA &kp DOT &trans       &trans
-		// 	>;
-		// };
-
-
-
-
     nav_layer {
       // &kp C_VOL_DOWN  &kp C_VOL_UP  &tdPlayNext
+
+            //  esc     Q        W        E        R         T         Y          U           I                   O                 P                   BSPC
 			bindings = <
-                &trans &kp F9   &kp F10  &kp F11  &kp F12  &trans &trans   &trans    &trans       &trans    &trans &kp DEL
-                &trans &kp F5   &kp F6   &kp F7   &kp F8   &trans &td0      &td1      &td2        &td3      &trans &trans
-                &trans &kp F1   &kp F2   &kp F3   &kp F4  &trans  &kp HOME   &kp PG_DN  &kp PG_UP &kp END   &trans &trans
-                &trans &trans   &mo 4    &trans   &trans   &trans &trans   &trans    &kp C_VOLUME_DOWN       &kp C_VOLUME_UP    &tdPlayPauseNext &trans
+                &trans  &kp F9   &kp F10  &kp F11  &kp F12   &trans    &trans     &trans      &td_UP              &trans             &trans             &kp DEL
+                &trans  &kp F5   &kp F6   &kp F7   &kp F8    &trans    &trans     &td_LEFT    &td_DOWN            &td_RIGHT          &trans             &trans
+                &trans  &kp F1   &kp F2   &kp F3   &kp F4    &trans    &kp HOME   &kp PG_DN   &kp PG_UP           &kp END            &trans             &trans
+                &trans  &trans   &mo 4    &trans   &trans    &trans    &trans     &trans      &kp C_VOLUME_DOWN   &kp C_VOLUME_UP    &tdPlayPauseNext   &trans
 			>;
 		};
 
@@ -142,31 +153,22 @@
 		// 	>;
 		// };
     sym_layer {
+      //    esc        Q            W         E          R            T            Y           U            I             O         P       BSPC
       bindings = <
-            &kp GRAVE  &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR  &kp PRCNT  &kp CARET  &kp AMPS        &kp ASTRK     &trans    &trans  &trans
-            &trans     &kp AMPS  &kp LBKT  &kp LPAR  &kp LBRC  &kp DOLLAR   &kp MINUS  &kp UNDER       &kp EQUAL     &kp PLUS  &trans  &trans
-            &trans     &kp AT    &kp RBKT  &kp RPAR  &kp RBRC  &kp PRCNT  &kp PIPE   &kp BSLH        &trans        &trans    &trans  &trans
-            &trans     &trans    &trans    &trans    &trans    &trans     &trans     &trans          &trans        &trans    &trans  &trans
+            &kp GRAVE  &kp EXCL     &kp AT    &kp HASH   &kp DOLLAR   &kp PRCNT    &kp CARET   &kp AMPS     &kp ASTRK     &trans    &trans  &trans
+            &trans     &kp DOLLAR   &kp LBKT  &kp LPAR   &kp LBRC     &kp AMPS     &kp MINUS   &kp UNDER    &kp EQUAL     &kp PLUS  &trans  &trans
+            &trans     &kp AT       &kp RBKT  &kp RPAR   &kp RBRC     &kp PRCNT    &kp PIPE    &kp BSLH     &trans        &trans    &trans  &trans
+            &trans     &trans       &trans    &trans     &trans       &trans       &trans      &trans       &trans        &trans    &trans  &trans
       >;
     };
-
-    // old_sym_layer {
-		// 	bindings = <
-    //             &kp GRAVE &kp EXCL  &kp AT    &kp HASH  &kp LPAR &kp RPAR &trans &trans &trans &trans &trans &trans
-    //             &kp BSLH  &kp DLLR  &kp PRCNT &kp ASTRK &kp LBKT &kp RBKT &trans &trans &trans &trans &trans &trans
-    //             &kp PIPE  &kp AMPS  &kp CARET &trans    &kp LBRC &kp RBRC &trans &trans &trans &trans &trans &trans
-    //             &trans    &trans    &trans    &trans    &trans   &mo 4    &trans &trans &trans &trans &trans &trans
-		// 	>;
-		// };
-
 
 
      adjustment_layer {
         bindings = <
-            &bootloader  &bt BT_CLR  &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans  &trans  &trans  &trans  &trans  &trans
-            &bt BT_PRV   &bt BT_NXT  &trans         &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
-            &trans       &trans      &trans         &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
-            &trans       &trans      &trans         &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
+            &bootloader  &trans   &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            &trans       &trans   &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            &trans       &trans   &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            &trans       &trans   &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
         >;
     };
 
