@@ -91,26 +91,28 @@
             key-positions = <3 4>;
             bindings = <&kp RA(W)>;
 
-            // bindings = <&mt RA(W) LS(RA(W))>;
-            // bindings = <&kp RA(W)>;
+            //bindings = <&kp RA(W)>;
         };
         combo_qw {
             timeout-ms = <50>;
             key-positions = <1 2>;
-            bindings = <&kp AS(RA(W))>;
+            // bindings = <&kp AS(RA(W))>;
 
-            // bindings = <&mt RA(W) LS(RA(W))>;
+            bindings = <&as RA(W) LS(RA(W))>;
             // bindings = <&kp RA(W)>;
         };
         combo_as {
             timeout-ms = <50>;
             key-positions = <13 14>;
-            bindings = <&kp AS(RA(A))>;
+            bindings = <&as RA(A) LS(RA(A))>;
+            // bindings = <&kp AS(RA(A))>;
         };
         combo_op {
             timeout-ms = <50>;
             key-positions = <9 10>;
-            bindings = <&kp AS(RA(O))>;
+            bindings = <&as RA(O) LS(RA(O))>;
+
+            // bindings = <&kp AS(RA(O))>;
 
         };
 
