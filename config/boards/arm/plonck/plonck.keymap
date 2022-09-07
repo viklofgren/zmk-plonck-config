@@ -86,34 +86,60 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_g {
-            timeout-ms = <50>;
-            key-positions = <3 4>;
-            bindings = <&kp RA(W)>;
 
-            //bindings = <&kp RA(W)>;
-        };
         combo_qw {
             timeout-ms = <50>;
             key-positions = <1 2>;
             // bindings = <&kp AS(RA(W))>;
 
-            bindings = <&as RA(W) LS(RA(W))>;
+            bindings = <&as LS(RA(W)) RA(W)>;
             // bindings = <&kp RA(W)>;
         };
         combo_as {
             timeout-ms = <50>;
             key-positions = <13 14>;
-            bindings = <&as RA(A) LS(RA(A))>;
+            bindings = <&as LS(RA(A)) RA(A)>;
             // bindings = <&kp AS(RA(A))>;
         };
         combo_op {
             timeout-ms = <50>;
             key-positions = <9 10>;
-            bindings = <&as RA(O) LS(RA(O))>;
+            bindings = <&as  LS(RA(O)) RA(O)>;
 
             // bindings = <&kp AS(RA(O))>;
+        };
 
+        combo_underscore {
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            bindings = <&kp UNDER>;
+        };
+        combo_minus {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&as PLUS MINUS>;
+        };
+        combo_equal {
+            timeout-ms = <50>;
+            key-positions = <19 20>;
+            bindings = <&kp EQUAL>;
+        };
+
+
+        combo_brace {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            bindings = <&as RBRC LBRC>;
+        };
+        combo_brkt {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&as RBKT LBKT>;
+        };
+        combo_paren {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&as RPAR LPAR>;
         };
 
       };
