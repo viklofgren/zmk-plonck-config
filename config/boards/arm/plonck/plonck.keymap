@@ -74,7 +74,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT";
             #binding-cells = <2>;
-            tapping_term_ms = <200>;
+            tapping_term_ms = <250>;
             quick_tap_ms = <125>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -89,7 +89,7 @@
         combo_g {
             timeout-ms = <50>;
             key-positions = <3 4>;
-            bindings = <&kp G>;
+            bindings = <&kp RA(W)>;
 
             // bindings = <&mt RA(W) LS(RA(W))>;
             // bindings = <&kp RA(W)>;
