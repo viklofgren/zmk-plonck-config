@@ -86,62 +86,64 @@
     combos {
         compatible = "zmk,combos";
 
-
         combo_qw {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <1 2>;
-            // bindings = <&kp AS(RA(W))>;
-
             bindings = <&as LS(RA(W)) RA(W)>;
-            // bindings = <&kp RA(W)>;
         };
         combo_as {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <13 14>;
             bindings = <&as LS(RA(A)) RA(A)>;
-            // bindings = <&kp AS(RA(A))>;
         };
         combo_op {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <9 10>;
             bindings = <&as  LS(RA(O)) RA(O)>;
-
-            // bindings = <&kp AS(RA(O))>;
         };
-
-        combo_underscore {
-            timeout-ms = <50>;
-            key-positions = <19 20>;
-            bindings = <&kp UNDER>;
-        };
-        combo_minus {
-            timeout-ms = <50>;
-            key-positions = <18 19>;
-            bindings = <&as PLUS MINUS>;
-        };
-        combo_equal {
-            timeout-ms = <50>;
-            key-positions = <20 21>;
-            bindings = <&kp EQUAL>;
-        };
-
-
         combo_brace {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <15 16>;
             bindings = <&as RBRC LBRC>;
         };
+
         combo_brkt {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <14 15>;
             bindings = <&as RBKT LBKT>;
         };
         combo_paren {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             key-positions = <16 17>;
             bindings = <&as RPAR LPAR>;
         };
 
+        combo_underscore {
+            timeout-ms = <75>;
+            key-positions = <19 20>;
+            bindings = <&kp UNDER>;
+        };
+        combo_minus {
+            timeout-ms = <75>;
+            key-positions = <18 19>;
+            bindings = <&as PLUS MINUS>;
+        };
+        combo_equal {
+            timeout-ms = <75>;
+            key-positions = <20 21>;
+            bindings = <&kp EQUAL>;
+        };
+
+        combo_plus {
+            timeout-ms = <75>;
+            key-positions = <21 22>;
+            bindings = <&kp PLUS>;
+        };
+        combo_colon {
+            timeout-ms = <75>;
+            key-positions = <22 23>;
+            bindings = <&kp EQUAL>;
+        };
       };
 
 
@@ -151,10 +153,10 @@
 
       default_layer {
         bindings = <
-                &gresc                  AS(Q)       AS(W)       AS(E)       AS(R)         AS(T)         AS(Y)          AS(U)             AS(I)              AS(O)      AS(P)                &kp BSPC
-                &kp TAB                 AS(A)       AS(S)       AS(D)       AS(F)         AS(G)         AS(H)          AS(J)             AS(K)              AS(L)      AS(SEMI)             AS(SQT)
-                &mt LSHFT &caps_word    AS(Z)       AS(X)       AS(C)       AS(V)         AS(B)         AS(N)          AS(M)             AS(COMMA)          AS(DOT)    AS(FSLH)             &kp RET
-                &trans                  &kp LGUI    &kp LALT    &kp LCTRL   &lt 1 LPAR    &lt 2 SPACE   &lt 2 SPACE    &lt 3 LBRC        &kp RALT           &kp RCTRL  &tdPlayPauseNext     &trans
+                &gresc                  AS(Q)       AS(W)       AS(E)       AS(R)         AS(T)         AS(Y)          AS(U)             AS(I)              AS(O)      AS(P)               &kp BSPC
+                &kp TAB                 AS(A)       AS(S)       AS(D)       AS(F)         AS(G)         AS(H)          AS(J)             AS(K)              AS(L)      AS(SEMI)            AS(SQT)
+                &mt LSHFT &caps_word    AS(Z)       AS(X)       AS(C)       AS(V)         AS(B)         AS(N)          AS(M)             AS(COMMA)          AS(DOT)    AS(FSLH)            &kp RET
+                &trans                  &kp LGUI    &kp LALT    &kp LCTRL   &lt 1 LPAR    &lt 2 SPACE   &lt 2 SPACE    &lt 3 LBRC        &kp RALT           &td_LEFT   &td_RIGHT           &trans
         >;
       };
 
@@ -170,10 +172,10 @@
 
     num_layer {
       bindings = <
-            &kp TILDE  &kp N1  &kp N2   &kp N3   &kp N4   &kp N5     &kp N6        &kp N7  &kp N8     &kp N9   &kp N0         &trans
-            &trans     &trans  &trans   &trans   &kp F5   &kp F2     &kp KP_MINUS  &kp N4  &kp N5     &kp N6   &kp KP_PLUS    &kp ASTRK
-            &trans     &trans  &trans   &trans   &trans   &kp PSCRN  &kp KP_EQUAL  &kp N1  &kp N2     &kp N3   &kp KP_SLASH   &trans
-            &trans     &trans  &trans   &trans   &trans   &trans     &trans        &kp N0  &kp COMMA  &kp DOT  &trans         &trans
+            &kp TILDE  &kp N1  &kp N2   &kp N3   &kp N4   &kp N5     &kp N6        &kp N7  &kp N8     &kp N9    &kp N0         &trans
+            &trans     &trans  &trans   &trans   &kp F5   &kp F2     &kp KP_MINUS  &kp N4  &kp N5     &kp N6    &kp DOT    &kp ASTRK
+            &trans     &trans  &trans   &trans   &trans   &kp PSCRN  &kp KP_EQUAL  &kp N1  &kp N2     &kp N3    &kp COMMA   &trans
+            &trans     &trans  &trans   &trans   &trans   &trans     &trans        &kp N0  &kp DOT  &td_DOWN  &td_UP         &trans
       >;
     };
 
